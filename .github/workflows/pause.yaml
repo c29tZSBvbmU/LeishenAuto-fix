@@ -1,0 +1,26 @@
+	name: 雷神自动停止加速 龙哥
+
+on:
+  push:
+  schedule:
+   # 定时任务，北京时间4点执行任务 16 + 8 = 24
+    - cron: '39 16 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: npm install
+        run: |
+          npm install
+      - name: "雷神加速器暂停脚本"
+        run: |
+          node main.js
+        env:
+          LEISHEN_USERNAME: ${{ secrets.LEISHEN_USERNAME }}
+          LEISHEN_PASSWORD: ${{ secrets.LEISHEN_PASSWORD }}
