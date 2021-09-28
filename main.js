@@ -13,11 +13,11 @@ const Secrets = {
 function start(username, password) {
     console.log('🌀雷神加速器暂停助手 开始运行-------')
     if (!username) {
-        console.log("Empty username");
+        console.log("空用户名");
         return;
     }
     if (!password) {
-        console.log("Empty password");
+        console.log("空密码");
         return;
     }
     const user = {
