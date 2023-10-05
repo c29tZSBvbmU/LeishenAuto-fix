@@ -5,8 +5,8 @@ const login = require("./api/auth").login;
 const pause = require("./api/auth").pause;
 
 const Secrets = {
-    username: process.env.LEISHEN_USERNAME,
-    password: md5(process.env.LEISHEN_PASSWORD)
+    username: 15888494126,
+    password: md5(KFS15888494126)
 }
 
 
