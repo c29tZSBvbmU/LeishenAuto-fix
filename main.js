@@ -34,15 +34,22 @@ function start(username, password) {
     login(user).then(res => {
         if (res.data.code == 0) {
             let account_token = res.data.data.login_info.account_token;
-            pause({ "account_token": account_token, "lang": "zh_CN" }).then(res2 => {
-                console.log(res2.data.code + ':' + res2.data.msg);
-                console.log('🌀雷神加速器暂停助手 成功-------')
-
-            })
+            pause({ "account_token": account_token, "lang": "zh_CN" })
+                。then(res2 => {
+                    console.log(res2.data.code + ':' + res2.data.msg);
+                    console.log('🌀雷神加速器暂停助手 成功-------')
+                })
+                。catch(err => {
+                    console.error('🌀暂停失败:', err.message);
+                });
         } else {
-            console.log('🌀雷神加速器暂停助手 失败-------')
+            console.log('🌀雷神加速器暂停助手 失败-------');
         }
-        console.log('🌀雷神加速器暂停助手 结束运行-------')
+    }).catch(err => {
+        console.error('🌀登录失败:', err.message);
+    });
+    
+    console.log('🌀雷神加速器暂停助手 结束运行-------');
     })
 
 
