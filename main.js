@@ -50,7 +50,7 @@ function sign(data) {
     const query = queryString({ ...sortedData, key: "5C5A639C20665313622F51E93E3F2783" }, false);
     const signature = hexMD5(query);
 
-    console.log("signature", signature);
+    //console.log("signature", signature);
     return { ...data, ts: timestamp, sign: signature };
 }
 
