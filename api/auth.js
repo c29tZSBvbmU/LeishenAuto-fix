@@ -2,7 +2,7 @@ const { pause_api, login_api } = require('../utils/request');
 
 function login(data) {
     return login_api({
-        url: '/api/auth/login/v1',
+        url: '/api/auth/login/v2',
         method: 'post',
         data
     })
